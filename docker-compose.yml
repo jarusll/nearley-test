@@ -13,6 +13,7 @@ services:
       - start
     volumes:
       - "./frontend:/app/frontend/"
+      - /app/frontend/node_modules
     networks:
       - central
 
@@ -26,6 +27,7 @@ services:
       - start
     volumes:
       - "./backend:/app/backend/"
+      - /app/backend/node_modules
     ports:
       - "5000:5000"
     networks:
