@@ -9,15 +9,24 @@ function App() {
 	  .then(x => setParsed(x.data))
 	  .catch(e => console.error(e.message))
     return (
-	<div className="flex w-100">
-	  <form onSubmit={handleSubmit(onSubmit)} className="flex flex-column w-100">
+	<div className="flex w-100 flex-column flex-row-ns">
+	  <form onSubmit={handleSubmit(onSubmit)} className="flex flex-column w-50-l w-100-ns">
 	    <div className="w-100 flex flex-column pa2">
-	      <textarea {...register("grammar")} className="h5 consolas"></textarea>
-	      <input type="text" {...register("input")} className="mt2 h2"/>
+
+		<label htmlFor="grammar">
+		  Grammar
+		</label>
+		<textarea {...register("grammar")} className="h5 consolas mb2" id="grammar"></textarea>
+
+		<label htmlFor="test-input">
+                  Test Input
+		</label>
+		<textarea {...register("input")} className="h3" id="test-input"></textarea>
+
 	    </div>
-	    <button type="submit" className="bg-blue flex ma2 bn white pa2 br1 pointer hover-bg-dark-blue">submit</button>
+	    <button type="submit" className="bg-blue ma2 bn white pa2 br1 pointer hover-bg-dark-blue tc">submit</button>
 	  </form>
-	  <div className="w-100 flex pa2">
+	  <div className="pa2 f6 w-50-l w-100-ns">
 	    <pre>{decodeURIComponent(parsed)}</pre>
 	  </div>
 	</div>

@@ -1,0 +1,8 @@
+version: "3.8"
+
+services:
+  frontend:
+    environment:
+      - REACT_APP_BACKEND=https://api.surajyadav.xyz/nearley
+
+  backend:
