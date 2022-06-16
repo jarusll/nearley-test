@@ -24,8 +24,12 @@ service.post('/', async (req, res) => {
     exec(`npx nearleyc "${grammartemp}" -o ${grammaroutputtemp}`)
     // parse input with grammar
     try {
-	res.send(shell.exec(`nearley-test -i "${input}" ${grammaroutputtemp} | ansi2txt`), 200, {
-	    'content-type': 'text/plain'
+	shell.exec(`nearley-test -i "${input}" ${grammaroutputtemp} | ansi2txt`, (err, stdout, stderr) => {
+	    if (stderr){
+		res.send(stderr)
+		return
+	    }
+	    res.send(stdout)
 	})
     } catch (e){
 	res.send({"message": e.message, req: req.body})
