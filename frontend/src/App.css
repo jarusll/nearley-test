@@ -1,0 +1,6 @@
+* {
+    background: #F0F0F0;
+}
+html {
+    filter: invert(100%) hue-rotate(180deg);
+}

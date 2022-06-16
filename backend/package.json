@@ -6,7 +6,7 @@
   "keywords": [],
   "author": "",
   "scripts": {
-    "start": "node nearley-api.js"
+    "start": "node ./index.js"
   },
   "license": "ISC",
   "dependencies": {

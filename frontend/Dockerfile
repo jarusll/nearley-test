@@ -2,6 +2,6 @@ FROM node
 
 WORKDIR /app/frontend
 
-COPY . /app/frontend
+COPY ./package.json .
 
 RUN yarn install

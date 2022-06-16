@@ -32,4 +32,4 @@ service.post('/', async (req, res) => {
     }
 })
 
-service.start(process.env.PORT).then((server) => { console.log("service started", process.env.PORT) })
+service.start(process.env.PORT || 5000).then((server) => { console.log("service started", process.env.PORT) })

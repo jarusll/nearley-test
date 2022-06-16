@@ -2,7 +2,7 @@ FROM node
 
 WORKDIR /app/backend
 
-COPY . /app/backend
+COPY ./package.json .
 
 RUN yarn install
 RUN apt update

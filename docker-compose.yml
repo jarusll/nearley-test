@@ -2,24 +2,30 @@ version: "3.8"
 
 services:
   frontend:
-    build: ./frontend
-    entrypoint: 
+    build: frontend
+    environment:
+      - REACT_APP_BACKEND=http://localhost:5000
+    ports:
+      - "3000:3000"
+    entrypoint:
       - yarn
       - run
       - start
-    ports:
-      - "3000:3000"
+    volumes:
+      - "./frontend:/app/frontend/"
     networks:
       - central
 
   backend:
-    build: ./backend
-    entrypoint: 
+    build: backend
+    environment:
+      - PORT=5000
+    entrypoint:
       - yarn
       - run
       - start
-    environment:
-      - PORT=5000
+    volumes:
+      - "./backend:/app/backend/"
     ports:
       - "5000:5000"
     networks:
