@@ -21,7 +21,7 @@ service.post('/', async (req, res) => {
     fs.writeFileSync(grammartemp, grammar);
     const grammaroutputtemp = "./temp.js"
     exec(`touch ${grammaroutputtemp}`)
-    exec(`npx nearleyc "${grammartemp}" -o ${grammaroutputtemp}`)
+    exec(`nearleyc "${grammartemp}" -o ${grammaroutputtemp}`)
     // parse input with grammar
     try {
 	shell.exec(`nearley-test -i "${input}" ${grammaroutputtemp} | ansi2txt`, (err, stdout, stderr) => {
