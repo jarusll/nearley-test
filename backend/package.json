@@ -1,0 +1,20 @@
+{
+  "name": "nearley-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "scripts": {
+    "start": "node nearley-api.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "nearley": "^2.20.1",
+    "restana": "^4.9.6",
+    "shelljs": "^0.8.5",
+    "sync-exec": "^0.6.2"
+  }
+}

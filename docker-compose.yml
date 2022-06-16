@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  frontend:
+    build: ./frontend
+    entrypoint: 
+      - yarn
+      - run
+      - start
+    ports:
+      - "3000:3000"
+    networks:
+      - central
+
+  backend:
+    build: ./backend
+    entrypoint: 
+      - yarn
+      - run
+      - start
+    environment:
+      - PORT=5000
+    ports:
+      - "5000:5000"
+    networks:
+      - central
+
+networks:
+  central:
